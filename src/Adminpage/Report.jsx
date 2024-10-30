@@ -38,16 +38,15 @@ const Report = () => {
 
           const reportData = response.data.data;
 
-          // Conditionally set adultData or childData based on ageGroup
           if (ageGroup === 'adult') {
             setAdultData(reportData.adult || []);
-            setChildData([]); // Clear child data
+            setChildData([]);
           } else if (ageGroup === 'child') {
             setChildData(reportData.child || []);
-            setAdultData([]); // Clear adult data
+            setAdultData([]);
           }
 
-          setReportData([]); // Clear general report data for specific age group data
+          setReportData([]); // Clear other report data
           break;
 
         case 'passengers_by_destination':
@@ -58,7 +57,6 @@ const Report = () => {
             params: { destinationCode: destination, startDate, endDate },
           });
           setReportData([response.data.data]);
-          console.log("report :", [response.data.data]);
           setAdultData([]);
           setChildData([]);
           break;
@@ -83,7 +81,6 @@ const Report = () => {
             params: { sourceCode: origin, destinationCode: destination },
           });
           setReportData(response.data.data);
-          console.log("report :", response.data.data);
           setAdultData([]);
           setChildData([]);
           break;
@@ -112,25 +109,19 @@ const Report = () => {
     fetchReport();
   };
 
-  // Function to generate PDF
   const handleDownloadPDF = () => {
     const doc = new jsPDF();
 
     doc.text('Report Results', 14, 16);
-    const headers = Object.keys(reportData[0] || {});
-    const data = reportData.map(row => Object.values(row));
+    const headers = Object.keys((adultData[0] || childData[0] || reportData[0]) || {});
+    const data = adultData.length > 0 ? adultData : childData.length > 0 ? childData : reportData;
 
-    const tableColumn = headers;
-    const tableRows = data;
-
-    // Add the table to the PDF
     doc.autoTable({
-      head: [tableColumn],
-      body: tableRows,
+      head: [headers],
+      body: data.map(row => Object.values(row)),
       startY: 30,
     });
 
-    // Save the PDF
     doc.save('report.pdf');
   };
 
@@ -166,7 +157,7 @@ const Report = () => {
         </>
       )}
 
-      {(reportType === 'flights_by_route') && (
+      {reportType === 'flights_by_route' && (
         <>
           <div className="form-group">
             <label>Origin:</label>
@@ -179,7 +170,7 @@ const Report = () => {
         </>
       )}
 
-      {(reportType === 'passengers_by_destination') && (
+      {reportType === 'passengers_by_destination' && (
         <div className="form-group">
           <label>Destination:</label>
           <input type="text" value={destination} onChange={(e) => setDestination(e.target.value)} />
@@ -207,21 +198,21 @@ const Report = () => {
 
       {error && <p className="error-message">{error}</p>}
 
-      {reportData.length > 0 && (
+      {(reportData.length > 0 || adultData.length > 0 || childData.length > 0) && (
         <div className="report-results">
           <h3>Report Results</h3>
           <table className="report-table" border="1">
             <thead>
               <tr>
-                {Object.keys(reportData[0]).map((key) => (
+                {Object.keys((adultData[0] || childData[0] || reportData[0]) || {}).filter(key => key !== 'flight_count').map((key) => (
                   <th key={key}>{key}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {reportData.map((row, index) => (
+              {(adultData.length > 0 ? adultData : childData.length > 0 ? childData : reportData).map((row, index) => (
                 <tr key={index}>
-                  {Object.values(row).map((value, idx) => (
+                  {Object.entries(row).filter(([key]) => key !== 'flight_count').map(([key, value], idx) => (
                     <td key={idx}>{value}</td>
                   ))}
                 </tr>
@@ -229,7 +220,6 @@ const Report = () => {
             </tbody>
           </table>
 
-          {/* Download button */}
           <button onClick={handleDownloadPDF} className="generate-button">
             Download PDF
           </button>
