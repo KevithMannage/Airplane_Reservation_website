@@ -29,7 +29,54 @@ const Flights = () => {
       maxLoad: '575000.00 Kg',
       avgSpeed: '903 Kmph',
       manufacturer: 'Airbus'
+    },
+    {
+      name: 'Boeing 767',
+      imgSrc: 'Boeing-767.jpg',
+      passengerCapacity: 269,
+      fuelCapacity: '91100.00 L',
+      maxLoad: '186880.00 Kg',
+      avgSpeed: '851 Kmph',
+      manufacturer: 'Boeing Commercial'
+    },
+    {
+      name: 'Embraer E195',
+      imgSrc: 'Embraer.jpg',
+      passengerCapacity: 184,
+      fuelCapacity: '13306.00 L',
+      maxLoad: '49800.00 Kg',
+      avgSpeed: '870 Kmph',
+      manufacturer: 'Embraer'
+    },
+    {
+      name: 'Bombardier CRJ900',
+      imgSrc: 'bombardier.jpg',
+      passengerCapacity: 190,
+      fuelCapacity: '8717.00 L',
+      maxLoad: '34200.00 Kg',
+      avgSpeed: '828 Kmph',
+      manufacturer: 'Bombardier'
+    },
+    {
+      name: 'Airbus A330',
+      imgSrc: 'Airbus-330.jpg',
+      passengerCapacity: 277,
+      fuelCapacity: '139090.00 L',
+      maxLoad: '242000.00 Kg',
+      avgSpeed: '871 Kmph',
+      manufacturer: 'Airbus'
+    },
+    {
+      name: 'Airbus A380',
+      imgSrc: 'Airbus-380.jpg',
+      passengerCapacity: 453,
+      fuelCapacity: '320000.00 L',
+      maxLoad: '560000.00 Kg',
+      avgSpeed: '903 Kmph',
+      manufacturer: 'Airbus'
     }
+    
+
   ];
 
   return (

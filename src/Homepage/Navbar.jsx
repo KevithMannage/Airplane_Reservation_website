@@ -66,7 +66,7 @@ const Navbar = () => {
             <nav className="navbar">
                 <div className="navbar-logo">
                     <img src="/b_.png" alt="Airline Logo" /> 
-                    <span>Airline Logo</span>
+                    <span>Airline </span>
                 </div>
                 <ul className="navbar-links">
                     {isLoggedIn ? (

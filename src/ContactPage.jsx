@@ -42,7 +42,7 @@ const ContactPage = () => {
           <h3>Office Address</h3>
           <p>123 Main St</p>
           <p>Suite 400</p>
-          <p>Springfield</p>
+          <p>Indonesia</p>
         </div>
         <div className={styles.contactItem}>
           <h3>Phone Number</h3>
@@ -50,7 +50,7 @@ const ContactPage = () => {
         </div>
         <div className={styles.contactItem}>
           <h3>Email Address</h3>
-          <p><a href="mailto:contact@airways.com">contact@airways.com</a></p>
+          <p><a href="mailto:contact@airways.com">B@airways.com</a></p>
         </div>
       </section>
 

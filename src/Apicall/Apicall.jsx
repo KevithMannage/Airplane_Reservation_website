@@ -15,6 +15,7 @@ export const API_USERTIER="http://localhost:3000/user/tier";
 export const API_USERBOOKING="http://localhost:3000/booking/addBooking"
 */
 
+
 const BASE_URL = "http://localhost:3000";
 
 export const API_USER = `${BASE_URL}/user/tier`;
@@ -30,3 +31,5 @@ export const API_GETSEATS = `${BASE_URL}/booking/getseats?schedule_id`;
 export const API_RESERVESEATS = `${BASE_URL}/booking/addReservation`;
 export const API_USERTIER = `${BASE_URL}/user/tier`;
 export const API_USERBOOKING = `${BASE_URL}/booking/addBooking`;
+
+//const BASE_URL ="https://young-wildwood-03707-2e18f2a5a86f.herokuapp.com"

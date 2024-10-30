@@ -1,11 +1,12 @@
 body {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  height: 100vh; /* Ensure body takes full viewport height */
-  background-size: cover; /* Cover the entire viewport */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent image repetition */
-  background-attachment: fixed; /* Keep the background fixed during scrolling */
+  margin: 0; 
+  padding: 0; 
+  height: 100vh; 
+  background-size: cover; 
+  background-color: #555;
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
 }
 
 .report-container {

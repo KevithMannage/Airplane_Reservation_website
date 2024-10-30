@@ -21,11 +21,11 @@ const About = () => {
         </div>
         <div className="info-item">
           <span role="img" aria-label="Location">📍</span>
-          <p>Location<br /><strong>Melbourne, Victoria, Australia</strong></p>
+          <p>Location<br /><strong>Indonesia</strong></p>
         </div>
         <div className="info-item">
           <span role="img" aria-label="Email">📧</span>
-          <p>Email Address<br /><strong>info@bairways.com</strong></p>
+          <p>Email Address<br /><strong>B@airways.com</strong></p>
         </div>
         <button className="book-now-button" onClick={handleBookNowClick}>BOOK NOW</button>
       </div>

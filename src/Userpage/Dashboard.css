@@ -138,6 +138,12 @@
     margin-bottom: 20px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
 .book-btn {
     background-color: #ff5f6d;
     color: white;
@@ -145,9 +151,11 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 20px;
     transition: background-color 0.3s ease, transform 0.2s;
+    display: block;
+    margin: 0 auto;
 }
+
 
 .book-btn:hover {
     background-color: #e60206;

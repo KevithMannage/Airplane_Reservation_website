@@ -23,6 +23,7 @@ const Logout = () => {
         console.log('User logged out. Token removed.');
 
         // Redirect to login page
+        window.location.reload();
         navigate('/login');
     }, [navigate]);
 
