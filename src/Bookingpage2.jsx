@@ -3,6 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './BookingPage2.css';
+import  {APi_FLIGHTSEARCH} from './Apicall/Apicall.jsx'
+import  {API_FLIGHTSCHEDULE} from './Apicall/Apicall.jsx'
+import  {APi_GETSEATS} from './Apicall/Apicall.jsx'
+import  {APi_RESERVESEATS} from './Apicall/Apicall.jsx'
+
+
 const Bookingpage2 = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState({
@@ -115,9 +121,12 @@ const Bookingpage2 = () => {
       }
 
       try {
+        const APilink6=APi_FLIGHTSEARCH;
         const response = await fetch(
-          `http://localhost:3000/schedule/flight/daterange?start=${startDate}&end=${endDate}&from=${source}&to=${destination}`
+          
+          `${APi_FLIGHTSEARCH}=${startDate}&end=${endDate}&from=${source}&to=${destination}`
         );
+
 
         if (!response.ok) {
           throw new Error('Error fetching flight data');
@@ -150,7 +159,8 @@ const Bookingpage2 = () => {
       setSelectedScheduleId(flight.schedule_id);
       setLoadingSeats(true);
 
-      const flightResponse = await fetch(`http://localhost:3000/schedule/flight/${flight.schedule_id}`);
+      const Apilink7=API_FLIGHTSCHEDULE;
+      const flightResponse = await fetch(`${API_FLIGHTSCHEDULE}/${flight.schedule_id}`);
       if (!flightResponse.ok) {
         throw new Error('Failed to fetch flight details');
       }
@@ -158,8 +168,9 @@ const Bookingpage2 = () => {
       setFlightDetails(flightData);
 
       const fetchSeatsForClass = async (ticketType) => {
+        const Apilink7=APi_GETSEATS;
         const seatResponse = await fetch(
-          `http://localhost:3000/booking/getseats?schedule_id=${flight.schedule_id}&ticket_type=${ticketType}`
+          `${APi_GETSEATS}=${flight.schedule_id}&ticket_type=${ticketType}`
         );
         if (!seatResponse.ok) {
           throw new Error('Failed to fetch seat details');
@@ -220,8 +231,8 @@ const Bookingpage2 = () => {
           schedule_id: selectedScheduleId,
           seat_no: seat,
         };
-
-        const response = await fetch('http://localhost:3000/booking/addReservation', {
+        const Apilink10=APi_RESERVESEATS;
+        const response = await fetch(APi_RESERVESEATS, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

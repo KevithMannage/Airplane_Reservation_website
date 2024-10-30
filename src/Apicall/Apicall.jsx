@@ -1,0 +1,13 @@
+export const API_USER="http://localhost:3000/user/tier";
+export const API_FLIGHTSCHEDULE="http://localhost:3000/schedule/flight";
+export const API_FLIGHTBBOOKING="http://localhost:3000/booking/addBooking";
+export const API_USERLOGIN ="http://localhost:3000/user/login";
+export const API_ADMINLOGIN="http://localhost:3000/admin/adminlogin";
+export const API_USERDETAILS="http://localhost:3000/user";
+export const API_USERBOOKINGS="http://localhost:3000/user/user-bookings";
+export const API_USERREGISTER="http://localhost:3000/user/register";
+export const APi_FLIGHTSEARCH= "http://localhost:3000/schedule/flight/daterange?start";
+export const APi_GETSEATS= "http://localhost:3000/booking/getseats?schedule_id";
+export const APi_RESERVESEATS="http://localhost:3000/booking/addReservation";
+export const APi_USERTIER="http://localhost:3000/user/tier";
+export const API_USERBOOKING="http://localhost:3000/booking/addBooking"

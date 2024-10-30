@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './UserBookings.css'; 
+import  {API_USERBOOKINGS} from './Apicall/Apicall.jsx'
+
+
 
 const UserBookings = () => {
   const [pastBookings, setPastBookings] = useState([]);
@@ -9,7 +12,8 @@ const UserBookings = () => {
     const email = localStorage.getItem('email');
     const token = localStorage.getItem('token'); 
     if (email) {
-      fetch(`http://localhost:3000/user/user-bookings/${email}`, {
+      const ApiUrl4=API_USERBOOKINGS
+      fetch(`${ApiUrl4}/${email}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

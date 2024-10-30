@@ -1,6 +1,8 @@
 
 import { useEffect, useState } from 'react';
 import './BookAndSearchFlight.css';
+import  {APi_FLIGHTSEARCH} from './Apicall/Apicall.jsx'
+import  {API_FLIGHTSCHEDULE} from './Apicall/Apicall.jsx'
 
 const BookAndSearchFlight = () => {
   const [search, setSearch] = useState({
@@ -99,8 +101,10 @@ const BookAndSearchFlight = () => {
       }
 
       try {
+        const APilink6=APi_FLIGHTSEARCH;
         const response = await fetch(
-          `http://localhost:3000/schedule/flight/daterange?start=${startDate}&end=${endDate}&from=${source}&to=${destination}`
+          
+          `${APi_FLIGHTSEARCH}=${startDate}&end=${endDate}&from=${source}&to=${destination}`
         );
 
         if (!response.ok) {
@@ -132,7 +136,8 @@ const BookAndSearchFlight = () => {
 
   const handleViewDetails = async (flight) => {
     try {
-      const flightResponse = await fetch(`http://localhost:3000/schedule/flight/${flight.schedule_id}`);
+      const Apilink7=API_FLIGHTSCHEDULE;
+      const flightResponse = await fetch(`${API_FLIGHTSCHEDULE}/${flight.schedule_id}`);
       if (!flightResponse.ok) {
         throw new Error('Failed to fetch flight details');
       }

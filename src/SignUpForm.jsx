@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import './SignupForm.css';
+import {API_USERREGISTER} from './Apicall/Apicall.jsx'
+
 
 const SignupForm = () => {
     const [userData, setUserData] = useState({
@@ -32,7 +34,8 @@ const SignupForm = () => {
         setSuccessMessage('');
 
         try {
-            const response = await fetch('http://localhost:3000/user/register', {
+            const ApiUrl5=API_USERREGISTER;
+            const response = await fetch(API_USERREGISTER, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -113,7 +116,6 @@ const SignupForm = () => {
                             <option value="">Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                            <option value="Other">Other</option>
                         </select>
                     </label>
                     <label>

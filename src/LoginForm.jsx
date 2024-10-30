@@ -154,6 +154,8 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 import './LoginForm.css';
+import {API_USERLOGIN} from './Apicall/Apicall.jsx'
+import { API_ADMINLOGIN } from './Apicall/Apicall.jsx';
 
 const LoginForm = () => {
     const { setIsLoggedIn, setUserRole } = useContext(AuthContext);
@@ -169,7 +171,9 @@ const LoginForm = () => {
     };
 
     const handleUserLogin = async () => {
-        const loginEndpoint = 'http://localhost:3000/user/login';
+        const Apiurl1 = API_USERLOGIN;
+        //console.log(Apiurl1);
+        const loginEndpoint = Apiurl1;
 
         try {
             const response = await fetch(loginEndpoint, {
@@ -201,7 +205,8 @@ const LoginForm = () => {
     };
 
     const handleAdminLogin = async () => {
-        const loginEndpoint = 'http://localhost:3000/admin/adminlogin';
+        const Apiurl2 = API_ADMINLOGIN;
+        const loginEndpoint = Apiurl2;
 
         try {
             const response = await fetch(loginEndpoint, {
@@ -243,7 +248,7 @@ const LoginForm = () => {
     };
 
     const handleSignup = () => {
-        navigate('/signup');
+        navigate('/sign-up');
     };
 
     return (

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './SubmitPage.css';
+import  {API_FLIGHTSCHEDULE} from './Apicall/Apicall.jsx'
+import  {APi_USERTIER} from './Apicall/Apicall.jsx'
+import  {API_USERBOOKING} from './Apicall/Apicall.jsx'
 
 const SubmitPage = () => {
     const location = useLocation();
@@ -58,7 +61,9 @@ const SubmitPage = () => {
     useEffect(() => {
         const fetchPrices = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/schedule/flight/${scheduleId}`);
+                const Apilink8=API_FLIGHTSCHEDULE;
+;
+                const response = await fetch(`${API_FLIGHTSCHEDULE}/${scheduleId}`);
                 if (response.ok) {
                     const data = await response.json();
                     setTicketPrices({
@@ -79,7 +84,8 @@ const SubmitPage = () => {
 
     const fetchDiscountedPrice = async (email, basePrice) => {
         try {
-            const response = await fetch(`http://localhost:3000/user/email/${email}`);
+            const Apilink9=APi_USERTIER;
+            const response = await fetch(`${APi_USERTIER}/${email}`);
             if (response.ok) {
                 const data = await response.json();
                 const discount = data.tier === 'Gold' ? 0.91 : data.tier === 'Frequent' ? 0.95 : 1;
@@ -160,7 +166,7 @@ const SubmitPage = () => {
                     ticketCost, // Keep it here to send to the server
                 };
     
-                const response = await fetch('http://localhost:3000/booking/addBooking', {
+                const response = await fetch(API_USERBOOKING, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(bookingData),
