@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ContactPage.module.css';
-import Footer from './Footer';
+import Footer from './Homepage/Footer';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -55,58 +55,8 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form */}
-      <section className={styles.formSection}>
-        <h2>If you have any questions, please use the form below</h2>
-        <form className={styles.contactForm} onSubmit={handleSubmit}>
-          <label>
-            Name:
-            <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-          </label>
-          <label>
-            Last Name:
-            <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
-          </label>
-          <label>
-            City:
-            <input type="text" name="city" value={formData.city} onChange={handleChange} required />
-          </label>
-          <label>
-            Country:
-            <input type="text" name="country" value={formData.country} onChange={handleChange} required />
-          </label>
-          <label>
-            Email:
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-          </label>
-          <label>
-            Confirm Email Address:
-            <input type="email" name="confirmEmail" value={formData.confirmEmail} onChange={handleChange} required />
-          </label>
-          <label>
-            How can we help you?:
-            <select name="question" value={formData.question} onChange={handleChange} required>
-              <option value="">Select an option</option>
-              <option value="general">General question</option>
-              <option value="support">Support request</option>
-              <option value="feedback">Feedback</option>
-            </select>
-          </label>
-          <label>
-            Comment or Message (0 of {charLimit} max characters):
-            <textarea
-              name="comment"
-              value={formData.comment}
-              onChange={handleChange}
-              maxLength={charLimit}
-              required
-            />
-            <p className={styles.charCount}>{charCount} of {charLimit} characters used</p>
-          </label>
-
-          
-          <button type="submit" className={styles.submitButton}>Submit</button>
-        </form>
-      </section>
+      
+     
 
      
     </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './UserBookings.css'; 
-import  {API_USERBOOKINGS} from './Apicall/Apicall.jsx'
+import  {API_USERBOOKINGS} from '../Apicall/Apicall.jsx'
 
 
 

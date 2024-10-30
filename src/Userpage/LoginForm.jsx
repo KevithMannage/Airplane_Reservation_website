@@ -152,10 +152,10 @@ export default LoginForm;
 */
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from './AuthContext';
+import { AuthContext } from '../Adminpage/AuthContext.jsx';
 import './LoginForm.css';
-import {API_USERLOGIN} from './Apicall/Apicall.jsx'
-import { API_ADMINLOGIN } from './Apicall/Apicall.jsx';
+import {API_USERLOGIN} from '../Apicall/Apicall.jsx'
+import { API_ADMINLOGIN } from '../Apicall/Apicall.jsx';
 
 const LoginForm = () => {
     const { setIsLoggedIn, setUserRole } = useContext(AuthContext);

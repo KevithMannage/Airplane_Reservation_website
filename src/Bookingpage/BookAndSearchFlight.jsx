@@ -1,8 +1,8 @@
 
 import { useEffect, useState } from 'react';
 import './BookAndSearchFlight.css';
-import  {API_FLIGHTSEARCH} from './Apicall/Apicall.jsx'
-import  {API_FLIGHTSCHEDULE} from './Apicall/Apicall.jsx'
+import  {API_FLIGHTSEARCH} from '../Apicall/Apicall.jsx'
+import  {API_FLIGHTSCHEDULE} from '../Apicall/Apicall.jsx'
 
 const BookAndSearchFlight = () => {
   const [search, setSearch] = useState({
@@ -101,10 +101,9 @@ const BookAndSearchFlight = () => {
       }
 
       try {
-        const APilink6=APi_FLIGHTSEARCH;
+        const APilink6=API_FLIGHTSEARCH;
         const response = await fetch(
-          
-          `${APi_FLIGHTSEARCH}=${startDate}&end=${endDate}&from=${source}&to=${destination}`
+          `${API_FLIGHTSEARCH}=${startDate}&end=${endDate}&from=${source}&to=${destination}`
         );
 
         if (!response.ok) {

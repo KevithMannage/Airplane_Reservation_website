@@ -15,10 +15,8 @@ export const API_USERTIER="http://localhost:3000/user/tier";
 export const API_USERBOOKING="http://localhost:3000/booking/addBooking"
 */
 
-// Define the base URL
 const BASE_URL = "http://localhost:3000";
 
-// Define the endpoints using the BASE_URL
 export const API_USER = `${BASE_URL}/user/tier`;
 export const API_FLIGHTSCHEDULE = `${BASE_URL}/schedule/flight`;
 export const API_FLIGHTBBOOKING = `${BASE_URL}/booking/addBooking`;

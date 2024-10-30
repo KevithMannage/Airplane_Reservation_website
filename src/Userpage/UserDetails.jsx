@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './UserDetails.css';
-import {API_USERDETAILS} from './Apicall/Apicall.jsx'
+import {API_USERDETAILS} from '../Apicall/Apicall.jsx'
 
 const UserDetails = () => {
   const [userData, setUserData] = useState(null);
@@ -11,7 +11,7 @@ const UserDetails = () => {
   useEffect(() => {
     if (email && token) {
       const Apilink3=API_USERDETAILS;
-      fetch(`${Apilink3}/${email}`, {
+      fetch(`${API_USERDETAILS}/${email}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

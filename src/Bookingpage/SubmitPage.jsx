@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './SubmitPage.css';
-import  {API_FLIGHTSCHEDULE} from './Apicall/Apicall.jsx'
-import  {API_USERTIER} from './Apicall/Apicall.jsx'
-import  {API_USERBOOKING} from './Apicall/Apicall.jsx'
+import  {API_FLIGHTSCHEDULE} from '../Apicall/Apicall.jsx';
+import  {API_USERTIER} from '../Apicall/Apicall.jsx';
+import  {API_USERBOOKING} from '../Apicall/Apicall.jsx';
 
 const SubmitPage = () => {
     const location = useLocation();
@@ -84,8 +84,8 @@ const SubmitPage = () => {
 
     const fetchDiscountedPrice = async (email, basePrice) => {
         try {
-            const Apilink9=APi_USERTIER;
-            const response = await fetch(`${APi_USERTIER}/${email}`);
+            const Apilink9=API_USERTIER;
+            const response = await fetch(`${API_USERTIER}/${email}`);
             if (response.ok) {
                 const data = await response.json();
                 const discount = data.tier === 'Gold' ? 0.91 : data.tier === 'Frequent' ? 0.95 : 1;

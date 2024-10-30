@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import './SignupForm.css';
-import {API_USERREGISTER} from './Apicall/Apicall.jsx'
+import {API_USERREGISTER} from '../Apicall/Apicall.jsx'
 
 
 const SignupForm = () => {

@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './BookingPage2.css';
-import  {API_FLIGHTSEARCH} from './Apicall/Apicall.jsx'
-import  {API_FLIGHTSCHEDULE} from './Apicall/Apicall.jsx'
-import  {API_GETSEATS} from './Apicall/Apicall.jsx'
-import  {API_RESERVESEATS} from './Apicall/Apicall.jsx'
+import  {API_FLIGHTSEARCH} from '../Apicall/Apicall.jsx'
+import  {API_FLIGHTSCHEDULE} from '../Apicall/Apicall.jsx'
+import  {API_GETSEATS} from '../Apicall/Apicall.jsx'
+import  {API_RESERVESEATS} from '../Apicall/Apicall.jsx'
 
 
 const Bookingpage2 = () => {
@@ -121,10 +121,10 @@ const Bookingpage2 = () => {
       }
 
       try {
-        const APilink6=APi_FLIGHTSEARCH;
+        const APilink6=API_FLIGHTSEARCH;
         const response = await fetch(
           
-          `${APi_FLIGHTSEARCH}=${startDate}&end=${endDate}&from=${source}&to=${destination}`
+          `${API_FLIGHTSEARCH}=${startDate}&end=${endDate}&from=${source}&to=${destination}`
         );
 
 
@@ -168,9 +168,9 @@ const Bookingpage2 = () => {
       setFlightDetails(flightData);
 
       const fetchSeatsForClass = async (ticketType) => {
-        const Apilink7=APi_GETSEATS;
+        const Apilink7=API_GETSEATS;
         const seatResponse = await fetch(
-          `${APi_GETSEATS}=${flight.schedule_id}&ticket_type=${ticketType}`
+          `${API_GETSEATS}=${flight.schedule_id}&ticket_type=${ticketType}`
         );
         if (!seatResponse.ok) {
           throw new Error('Failed to fetch seat details');
@@ -231,8 +231,8 @@ const Bookingpage2 = () => {
           schedule_id: selectedScheduleId,
           seat_no: seat,
         };
-        const Apilink10=APi_RESERVESEATS;
-        const response = await fetch(APi_RESERVESEATS, {
+        const Apilink10=API_RESERVESEATS;
+        const response = await fetch(API_RESERVESEATS, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
