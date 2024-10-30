@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import './BookAndSearchFlight.css';
-import  {APi_FLIGHTSEARCH} from './Apicall/Apicall.jsx'
+import  {API_FLIGHTSEARCH} from './Apicall/Apicall.jsx'
 import  {API_FLIGHTSCHEDULE} from './Apicall/Apicall.jsx'
 
 const BookAndSearchFlight = () => {

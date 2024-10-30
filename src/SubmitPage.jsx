@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './SubmitPage.css';
 import  {API_FLIGHTSCHEDULE} from './Apicall/Apicall.jsx'
-import  {APi_USERTIER} from './Apicall/Apicall.jsx'
+import  {API_USERTIER} from './Apicall/Apicall.jsx'
 import  {API_USERBOOKING} from './Apicall/Apicall.jsx'
 
 const SubmitPage = () => {

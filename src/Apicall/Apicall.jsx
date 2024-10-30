@@ -8,10 +8,10 @@ export const API_ADMINLOGIN="http://localhost:3000/admin/adminlogin";
 export const API_USERDETAILS="http://localhost:3000/user";
 export const API_USERBOOKINGS="http://localhost:3000/user/user-bookings";
 export const API_USERREGISTER="http://localhost:3000/user/register";
-export const APi_FLIGHTSEARCH= "http://localhost:3000/schedule/flight/daterange?start";
-export const APi_GETSEATS= "http://localhost:3000/booking/getseats?schedule_id";
-export const APi_RESERVESEATS="http://localhost:3000/booking/addReservation";
-export const APi_USERTIER="http://localhost:3000/user/tier";
+export const API_FLIGHTSEARCH= "http://localhost:3000/schedule/flight/daterange?start";
+export const API_GETSEATS= "http://localhost:3000/booking/getseats?schedule_id";
+export const API_RESERVESEATS="http://localhost:3000/booking/addReservation";
+export const API_USERTIER="http://localhost:3000/user/tier";
 export const API_USERBOOKING="http://localhost:3000/booking/addBooking"
 */
 

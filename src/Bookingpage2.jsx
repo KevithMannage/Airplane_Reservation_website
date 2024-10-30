@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './BookingPage2.css';
-import  {APi_FLIGHTSEARCH} from './Apicall/Apicall.jsx'
+import  {API_FLIGHTSEARCH} from './Apicall/Apicall.jsx'
 import  {API_FLIGHTSCHEDULE} from './Apicall/Apicall.jsx'
-import  {APi_GETSEATS} from './Apicall/Apicall.jsx'
-import  {APi_RESERVESEATS} from './Apicall/Apicall.jsx'
+import  {API_GETSEATS} from './Apicall/Apicall.jsx'
+import  {API_RESERVESEATS} from './Apicall/Apicall.jsx'
 
 
 const Bookingpage2 = () => {
